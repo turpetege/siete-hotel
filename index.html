@@ -334,6 +334,28 @@ body.adult .agegate{display:none}
 .mc-a{font-size:14px;color:var(--muted);margin:4px 0 18px}
 
 .agegate .ag-ok{white-space:normal;line-height:1.45;height:auto;padding-top:14px;padding-bottom:14px;max-width:100%}
+
+/* misafir yorumları */
+.yorumlar{background:var(--ivory);padding-block:clamp(56px,8vw,104px)}
+.yr-head{margin-bottom:clamp(28px,4vw,44px)}
+.yr-g{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 16px;font-size:14px}
+.yr-gs{font-weight:600;color:var(--accent-ink)}.yr-g:hover{border-color:var(--accent)}
+.yr-wrap{margin-top:0}
+.yr-track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 2*20px)/3);gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.yr-track::-webkit-scrollbar{display:none}
+@media (max-width:980px){.yr-track{grid-auto-columns:calc((100% - 20px)/2)}}
+@media (max-width:640px){.yr-track{grid-auto-columns:88%;gap:14px}}
+.yr-card{scroll-snap-align:start;margin:0;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:26px 24px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.yr-stars{color:var(--accent);letter-spacing:.18em;font-size:14px}
+.yr-card blockquote{margin:0;font-family:var(--serif);font-size:20px;line-height:1.45;color:var(--ink);flex:1}
+.yr-card figcaption{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.yr-card figcaption b{font-weight:500;color:var(--ink)}
+.yr-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px}
+.yr-btn{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;font-size:16px}
+.yr-btn:hover{border-color:var(--accent)}
+.yr-dots{display:flex;gap:6px}.yr-dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}.yr-dot[aria-current="true"]{background:var(--accent)}
+.yr-note{margin-top:16px;text-align:center;font-size:12.5px;color:var(--muted)}.yr-note a{color:var(--accent-ink)}
+@media (prefers-reduced-motion:reduce){.yr-track{scroll-behavior:auto}}
 /* misafir anketi */
 .anket{position:fixed;inset:0;z-index:90;background:rgba(38,36,33,.55);display:flex;align-items:flex-end;justify-content:center;padding:16px max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 @media (min-width:700px){.anket{align-items:center}}
@@ -693,7 +715,15 @@ body.adult .agegate{display:none}
     </div>
   </section>
 
-  <section class="policy" id="bilgiler">
+  <section class="yorumlar" id="yorumlar" aria-labelledby="yr-h">
+<div class="wrap">
+<header class="sec-h yr-head"><div><p class="label" data-en="Guest reviews">Misafir yorumları</p><h2 id="yr-h"><span data-en="What our guests">Misafirlerimiz</span> <em data-en="say about us">ne diyor?</em></h2></div>
+<a class="yr-g" href="https://www.google.com/maps/search/?api=1&query=Siete+Hotel+Lara+Antalya" target="_blank" rel="noopener"><span class="yr-gs">4,5 ★</span><span><span data-en="Google rating">Google puanı</span> · 269 <span data-en="reviews">yorum</span></span><span class="yr-arr" aria-hidden="true">→</span></a></header>
+<div class="yr-wrap"><div class="yr-track" id="yr-track" tabindex="0" aria-label="Misafir yorumları"><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="1 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Girişten çıkışa kadar tüm çalışanlar son derece ilgili, güler yüzlü ve yardımseverdi. Odalar tertemiz, düzenli ve oldukça konforluydu. Beklentimizin çok üzerinde bir deneyim yaşadık. … Gönül rahatlığıyla tavsiye ederim.</blockquote><figcaption><b>Sıla S.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="2 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>I stayed for one week the stay was great staff very friendly and helpful nothing was too much. Very clean hotel… breakfast was very nice. I would recommend to family and friends and will be returning when I visit Antalya again 😊</blockquote><figcaption><b>Bill B.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="3 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Otele 2. gelişimiz ve her iki seferde de çok memnun kaldık. Özellikle çalışanların ilgisi, güler yüzü ve her konuda yardımcı olmaya çalışmaları bizi çok memnun etti. … Sabah kahvaltıları ve otelin temizliği, hizmet kalitesi ve genel atmosferi de beklentimizin üzerindeydi.</blockquote><figcaption><b>Ege E.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="4 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>I’ve stayed at Siete 3 times in the last year and each stay was perfect. I cannot over emphasise how great and welcoming the staff at the hotel are! Always happy to help and very friendly, they make the stay so much better.</blockquote><figcaption><b>Elyes O.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="5 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Odalar çok güzel ve çok temiz… Her gün temizlik yapılıyor, kahvaltısı açık büfe ve çeşitli. Havuz alanını da çok beğendik. Konumu Lara&#x27;nın en işlek caddesinde; yemek, yüzme, her şeye yürüyerek ulaşım sağlayabileceğiniz bir yerde.</blockquote><figcaption><b>Nazlı Y.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="6 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>What a lovely hotel! Very clean and sweet friendly helpful staff. So near to amenities also being directly opposite the coast line. … I would definitely stay here again when I&#x27;m next visiting.</blockquote><figcaption><b>Chloe B.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="7 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Bizi güler yüzlü, profesyonel bir ekip karşıladı. Odalar temiz ve yeniydi. Kahvaltı da tabiri caizse kuş sütü eksikti sadece, 10/10. Buraya tekrar geleceğiz. Teşekkürler Siete Ekibi…</blockquote><figcaption><b>Yiğit Kazım Ş.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="8 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Her sene Antalya&#x27;ya eğitim için geliyorum ve devamlı bu otelde konaklıyoruz. Temiz, güler yüzlü hizmet, kahvaltı gayet yeterli. Hem iş için hem de tatil için gelip rahatlıkla, güvenli bir şekilde kalabileceğiniz bir otel.</blockquote><figcaption><b>Ela Işık S.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="9 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Jakuzili odamız harikaydı, çok temiz ve konforluydu. Kahvaltı da gerçekten zengin ve lezzetliydi.</blockquote><figcaption><b>Ferhat Ö.</b><span>Google</span></figcaption></figure><figure class="yr-card" role="group" aria-roledescription="yorum" aria-label="10 / 10"><div class="yr-stars" aria-label="5/5">★★★★★</div><blockquote>Tatlı, şirin bir butik otel… aile ortamı gibi. Herkes güler yüzlü, konumu çok güzel. Kahvaltı çok güzel; hele kruvasan ve pancake&#x27;te parmaklarınızı yiyin. Oteli tavsiye ederim.</blockquote><figcaption><b>Nuray T.</b><span>Google</span></figcaption></figure></div>
+<div class="yr-nav"><button type="button" class="yr-btn" id="yr-prev" aria-label="Önceki yorum">←</button><div class="yr-dots" id="yr-dots"><button type="button" class="yr-dot" aria-label="1. yorum"></button><button type="button" class="yr-dot" aria-label="2. yorum"></button><button type="button" class="yr-dot" aria-label="3. yorum"></button><button type="button" class="yr-dot" aria-label="4. yorum"></button><button type="button" class="yr-dot" aria-label="5. yorum"></button><button type="button" class="yr-dot" aria-label="6. yorum"></button><button type="button" class="yr-dot" aria-label="7. yorum"></button><button type="button" class="yr-dot" aria-label="8. yorum"></button><button type="button" class="yr-dot" aria-label="9. yorum"></button><button type="button" class="yr-dot" aria-label="10. yorum"></button></div><button type="button" class="yr-btn" id="yr-next" aria-label="Sonraki yorum">→</button></div></div>
+<p class="yr-note"><span data-en="Excerpts from guest reviews published on Google.">Google'da yayımlanan misafir yorumlarından alıntılardır.</span> <a href="https://www.google.com/maps/search/?api=1&query=Siete+Hotel+Lara+Antalya" target="_blank" rel="noopener" data-en="Read all reviews">Tüm yorumları okuyun</a></p>
+</div></section>
+<section class="policy" id="bilgiler">
     <div class="wrap">
       <header class="sec-h"><p class="label">Bilmeniz gerekenler</p><h2><span data-en="Hotel">Konaklama</span> <em data-en="policies">bilgileri</em></h2></header>
       <ul class="pol"><li><svg viewBox="0 0 24 24"><path d="M10 4H5v16h5M14 8l4 4-4 4M18 12H9"/></svg><span class="pk">Giriş</span><span class="pv">14:00</span><span class="pd">Odalarınız saat 14:00'ten itibaren hazırdır.</span></li><li><svg viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h9"/></svg><span class="pk">Çıkış</span><span class="pv">12:00</span><span class="pd">Çıkış saatimiz 12:00'dir.</span></li><li><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M4 10h16M9 3v4M15 3v4M9.5 15l2 2 3.5-3.5"/></svg><span class="pk">Ücretsiz iptal</span><span class="pv">24 saat</span><span class="pd">Girişten 24 saat öncesine kadar ücretsiz iptal.</span></li><li><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M10 17V8h3a2.5 2.5 0 0 1 0 5h-3"/></svg><span class="pk">Park</span><span class="pv">Ücretsiz</span><span class="pd">Otelimizin özel otoparkı yoktur; yan sokakta ücretsiz park edebilirsiniz.</span></li><li><svg viewBox="0 0 24 24"><path d="M5 15l1.5-4.5h11L19 15v3H5zM7.5 18v1.5M16.5 18v1.5M8 15h.01M16 15h.01M9 3.5c0 1-1 1.5-1 2.5a1 1 0 0 0 2 0c0-1-1-1.5-1-2.5zM15 3.5c0 1-1 1.5-1 2.5a1 1 0 0 0 2 0c0-1-1-1.5-1-2.5z"/></svg><span class="pk">Araç yıkama</span><span class="pv">Ücretsiz</span><span class="pd">Araçla gelen misafirlerimizin araçları yan sokağımızda ücretsiz iç-dış yıkanır.</span></li><li><svg viewBox="0 0 24 24"><path d="M3 16l4-1.5L12 5h2l-2 9.5 5-1.5 2-3h2l-1.5 5L3 18z"/></svg><span class="pk">Havalimanı transferi</span><span class="pv">Ücretli</span><span class="pd">Antalya Havalimanı'ndan transfer; WhatsApp'tan önceden ayırtın.</span></li><li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12M10 15.5c0-1.5 1-2.5 2-2.5s2 1 2 2.5M9 10h.01M12 8.5h.01M15 10h.01"/></svg><span class="pk">Evcil hayvan</span><span class="pv">Kabul edilmez</span><span class="pd">Evcil hayvan kabul etmiyoruz.</span></li></ul>
@@ -1007,6 +1037,24 @@ body.adult .agegate{display:none}
     f.hidden=true;later.hidden=true;ok.hidden=false;put('done');tabB.hidden=true;document.getElementById('ank-bitti').focus();
   });
 })();
+</script>
+
+<script>
+(function(){var t=document.getElementById('yr-track');if(!t)return;var cards=[].slice.call(t.children),dots=[].slice.call(document.querySelectorAll('#yr-dots .yr-dot')),i=0,timer=null,paused=false;
+ var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function per(){return Math.max(1,Math.round(t.clientWidth/cards[0].getBoundingClientRect().width))}
+ function go(n){var max=cards.length-per();i=n<0?max:(n>max?0:n);t.scrollTo({left:cards[i].offsetLeft-t.offsetLeft,behavior:reduce?'auto':'smooth'});mark();}
+ function mark(){dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')})}
+ t.addEventListener('scroll',function(){var x=t.scrollLeft,b=0,bd=1e9;cards.forEach(function(c,k){var d=Math.abs(c.offsetLeft-t.offsetLeft-x);if(d<bd){bd=d;b=k}});i=b;mark();},{passive:true});
+ document.getElementById('yr-prev').addEventListener('click',function(){go(i-1);restart()});
+ document.getElementById('yr-next').addEventListener('click',function(){go(i+1);restart()});
+ dots.forEach(function(d,k){d.addEventListener('click',function(){go(k);restart()})});
+ function start(){if(reduce)return;stop();timer=setInterval(function(){if(!paused&&!document.hidden)go(i+1)},6000)}
+ function stop(){if(timer)clearInterval(timer)} function restart(){start()}
+ ['mouseenter','focusin','touchstart'].forEach(function(e){t.addEventListener(e,function(){paused=true},{passive:true})});
+ ['mouseleave','focusout'].forEach(function(e){t.addEventListener(e,function(){paused=false})});
+ t.addEventListener('touchend',function(){setTimeout(function(){paused=false},4000)},{passive:true});
+ mark();start();})();
 </script>
 </body>
 </html>
