@@ -356,6 +356,18 @@ body.adult .agegate{display:none}
 .yr-dots{display:flex;gap:6px}.yr-dot{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:var(--line);cursor:pointer}.yr-dot[aria-current="true"]{background:var(--accent)}
 .yr-note{margin-top:16px;text-align:center;font-size:12.5px;color:var(--muted)}.yr-note a{color:var(--accent-ink)}
 @media (prefers-reduced-motion:reduce){.yr-track{scroll-behavior:auto}}
+
+/* yukarı / aşağı okları */
+.hero{position:relative}
+.hero-down{position:absolute;left:50%;bottom:calc(104px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.55);color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none;background:rgba(0,0,0,.12);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:background .25s}
+.hero-down:hover{background:rgba(0,0,0,.28)}
+.hero-down svg{animation:hd-bob 2.2s ease-in-out infinite}
+@keyframes hd-bob{0%,100%{transform:translateY(-2px)}50%{transform:translateY(3px)}}
+.to-top{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:41;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(0,0,0,.14);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s,transform .25s,visibility .25s}
+.to-top.on{opacity:1;visibility:visible;transform:none}
+.to-top:hover{border-color:var(--accent);color:var(--accent-ink)}
+@media (max-width:640px){.to-top{bottom:calc(max(16px,env(safe-area-inset-bottom,0px)) + 58px)}.hero-down{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (prefers-reduced-motion:reduce){.hero-down svg{animation:none}.to-top{transition:none}}
 /* misafir anketi */
 .anket{position:fixed;inset:0;z-index:90;background:rgba(38,36,33,.55);display:flex;align-items:flex-end;justify-content:center;padding:16px max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 @media (min-width:700px){.anket{align-items:center}}
@@ -422,7 +434,7 @@ body.adult .agegate{display:none}
     <div class="hero-in wrap">
       <p class="label light">Butik otel · Lara, Antalya</p>
       <h1>Lara'da huzurlu<br><em>bir konaklama</em></h1>
-    </div>
+    </div><a class="hero-down" href="#otel" aria-label="Aşağı in" data-en-aria="Scroll down"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
   </section>
 
   <div class="wrap book-wrap" id="rezervasyon">
@@ -1055,6 +1067,14 @@ body.adult .agegate{display:none}
  ['mouseleave','focusout'].forEach(function(e){t.addEventListener(e,function(){paused=false})});
  t.addEventListener('touchend',function(){setTimeout(function(){paused=false},4000)},{passive:true});
  mark();start();})();
+</script>
+<button type="button" class="to-top" id="to-top" aria-label="Başa dön"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+(function(){var b=document.getElementById('to-top');if(!b)return;var en=function(){return document.documentElement.lang==='en'};
+ function upd(){b.classList.toggle('on',window.scrollY>700);b.setAttribute('aria-label',en()?'Back to top':'Başa dön');}
+ window.addEventListener('scroll',upd,{passive:true});upd();
+ b.addEventListener('click',function(){var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:r?'auto':'smooth'});});
+ var d=document.querySelector('.hero-down');if(d)d.addEventListener('click',function(){if(en())d.setAttribute('aria-label','Scroll down')});})();
 </script>
 </body>
 </html>
